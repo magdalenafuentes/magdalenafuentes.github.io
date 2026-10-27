@@ -592,17 +592,24 @@ body:not(.page-home) .menu-toggle {
 
 .media-row {
   display: grid;
-  grid-template-columns: 280px 1fr;
+  grid-template-columns: 360px 1fr;
   gap: 28px;
   align-items: center;
   margin-bottom: 36px;
 }
 
 .media-row img {
-  width: 280px;
-  height: 168px;
+  width: 360px;
+  height: auto;
+  max-height: 360px;
   object-fit: contain;
   background: var(--white);
+  justify-self: center;
+}
+
+.media-row.media-row-map img {
+  width: 360px;
+  height: 360px;
 }
 
 .software-grid {
@@ -1190,6 +1197,12 @@ body:not(.page-home) .menu-toggle {
   .pub,
   .media-row {
     grid-template-columns: 1fr;
+  }
+
+  .media-row img {
+    width: min(360px, 100%);
+    height: auto;
+    justify-self: center;
   }
 
   .socials {
