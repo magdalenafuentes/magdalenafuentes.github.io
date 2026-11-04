@@ -99,8 +99,118 @@ body:not(.page-home) .site-header.is-sticky {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 30px 0 20px;
-  gap: 24px;
+  padding: 22px 0 16px;
+  gap: 18px;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.header-brand .header-socials {
+  flex-shrink: 0;
+}
+
+.header-tools {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.header-socials {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header-socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  color: var(--teal);
+}
+
+.header-socials svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+body.page-home .site-header .header-socials a,
+body.page-home .site-header .theme-toggle {
+  color: var(--white);
+}
+
+body.page-home .site-header .header-socials a:hover,
+body.page-home .site-header .theme-toggle:hover {
+  color: var(--mint);
+}
+
+body.page-home .mobile-nav .header-socials a,
+body.page-home .mobile-nav .theme-toggle {
+  color: var(--teal);
+}
+
+body.page-home .mobile-nav .header-socials a:hover,
+body.page-home .mobile-nav .theme-toggle:hover {
+  color: var(--teal-dark);
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--teal);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.theme-toggle svg {
+  width: 18px;
+  height: 18px;
+}
+
+.theme-toggle .icon-sun {
+  display: none;
+}
+
+html[data-theme="dark"] .theme-toggle .icon-moon {
+  display: none;
+}
+
+html[data-theme="dark"] .theme-toggle .icon-sun {
+  display: block;
+}
+
+.mobile-nav .header-socials {
+  margin-top: 28px;
+  justify-content: center;
+}
+
+.mobile-nav .header-socials a {
+  width: 42px;
+  height: 42px;
+  color: var(--teal);
+}
+
+.mobile-nav .header-socials svg {
+  width: 20px;
+  height: 20px;
 }
 
 .logo {
@@ -208,6 +318,13 @@ body:not(.page-home) .menu-toggle {
 
 .mobile-nav.is-open {
   display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mobile-nav .theme-toggle {
+  margin-top: 12px;
+  color: var(--teal);
 }
 
 .mobile-nav ul {
@@ -259,7 +376,7 @@ body:not(.page-home) .menu-toggle {
 }
 
 .hero-portrait {
-  width: min(300px, 100%);
+  width: min(340px, 100%);
   margin: 0 auto;
 }
 
@@ -409,14 +526,14 @@ body:not(.page-home) .menu-toggle {
 
 .person {
   display: grid;
-  grid-template-columns: 140px minmax(180px, 240px);
+  grid-template-columns: 168px minmax(180px, 240px);
   gap: 24px;
   align-items: center;
 }
 
 .person img {
-  width: 140px;
-  height: 140px;
+  width: 168px;
+  height: 168px;
   object-fit: cover;
   object-position: center 22%;
   border-radius: 50%;
@@ -495,7 +612,7 @@ body:not(.page-home) .menu-toggle {
   display: grid;
   grid-template-columns: 317px 1fr;
   gap: 28px;
-  align-items: center;
+  align-items: start;
   margin-bottom: 64px;
 }
 
@@ -577,6 +694,29 @@ body:not(.page-home) .menu-toggle {
   background: var(--teal);
 }
 
+.pub > div:last-child {
+  min-width: 0;
+}
+
+.pub .bibtex {
+  display: none;
+  margin: 12px 0 0;
+  padding: 12px 14px;
+  max-width: 100%;
+  overflow-x: auto;
+  background: var(--mint);
+  color: var(--teal);
+  border-radius: 8px;
+  font-size: 12px;
+  line-height: 1.45;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.pub .bibtex.is-open {
+  display: block;
+}
+
 /* Resources lists */
 .page-resources .page-title {
   margin-bottom: 0;
@@ -605,6 +745,7 @@ body:not(.page-home) .menu-toggle {
   object-fit: contain;
   background: var(--white);
   justify-self: center;
+  border-radius: 8px;
 }
 
 .media-row.media-row-map img {
@@ -693,32 +834,86 @@ body:not(.page-home) .menu-toggle {
   max-width: 920px;
 }
 
-.course .meta {
-  margin-bottom: 28px;
+.course-kicker {
+  margin: 8px 0 10px;
+  color: var(--teal-mid);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.course h1 {
+  font-size: clamp(2rem, 4vw, 2.7rem);
+  margin-bottom: 6px;
+}
+
+.course-code {
+  margin: 0 0 28px;
+  color: var(--teal);
+  font-size: 1.05rem;
 }
 
 .course h2 {
   font-size: 1.35rem;
-  margin: 32px 0 12px;
+  margin: 36px 0 12px;
+  padding-top: 8px;
 }
 
 .course h3 {
-  font-size: 1.1rem;
-  margin: 22px 0 8px;
+  font-size: 1.05rem;
+  margin: 0 0 6px;
 }
 
 .course ul {
   padding-left: 1.2em;
 }
 
-.week {
-  margin: 18px 0;
+.logistics {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 10px 20px;
+  margin: 0;
 }
 
-.week strong {
-  display: block;
-  margin-bottom: 6px;
+.logistics dt {
+  font-weight: 700;
   color: var(--teal);
+}
+
+.logistics dd {
+  margin: 0;
+}
+
+.schedule {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.schedule > li {
+  display: grid;
+  grid-template-columns: 168px 1fr;
+  gap: 6px 28px;
+  padding: 16px 0;
+  border-top: 1px solid var(--mint-dark);
+}
+
+.schedule > li:last-child {
+  border-bottom: 1px solid var(--mint-dark);
+}
+
+.schedule .when {
+  font-weight: 700;
+  color: var(--teal-mid);
+}
+
+.schedule ul {
+  margin: 6px 0 0;
+}
+
+.grading {
+  margin: 8px 0 0;
 }
 
 /* Footer */
@@ -1157,6 +1352,16 @@ body:not(.page-home) .menu-toggle {
   }
 }
 
+@media (max-width: 1180px) {
+  .nav-list {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
 @media (max-width: 900px) {
   .nav-list {
     display: none;
@@ -1239,7 +1444,181 @@ body:not(.page-home) .menu-toggle {
 
   .logo,
   .logo img {
-    width: 170px;
-    height: 26px;
+    width: 120px;
+    height: 18px;
   }
+
+  .header-inner {
+    gap: 8px;
+  }
+
+  .header-brand {
+    gap: 6px;
+  }
+
+  .header-socials a {
+    width: 22px;
+    height: 22px;
+  }
+
+  .header-socials svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .schedule > li,
+  .logistics {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+html[data-theme="dark"] .hero {
+  background: #0c1c19;
+}
+
+html[data-theme="dark"] .site-header.is-sticky {
+  background: rgba(12, 28, 25, 0.96);
+}
+
+html[data-theme="dark"] body {
+  background: #10211e;
+  color: #d7e6e2;
+}
+
+html[data-theme="dark"] :where(h1, h2, h3, h4, .page-title) {
+  color: #f4faf8;
+}
+
+html[data-theme="dark"] :where(
+  p,
+  li,
+  dt,
+  dd,
+  .pub .authors,
+  .pub .venue,
+  .pub .year,
+  .dataset-card p,
+  .service-list li,
+  .course-code,
+  .logistics dt
+) {
+  color: #d7e6e2;
+}
+
+html[data-theme="dark"] a:not(.btn) {
+  color: #d7ebe6;
+}
+
+html[data-theme="dark"] a:not(.btn):hover,
+html[data-theme="dark"] body:not(.page-home) .nav-list a[aria-current="page"] {
+  color: #8fbfb6;
+}
+
+html[data-theme="dark"] :where(
+  body:not(.page-home) .site-header,
+  .mobile-nav,
+  .theme-card,
+  .highlight-card,
+  .news-card,
+  .person
+) {
+  background: #10211e;
+}
+
+html[data-theme="dark"] body:not(.page-home) .site-header,
+html[data-theme="dark"] body:not(.page-home) .site-header.is-sticky {
+  background: #ffffff;
+  border-bottom-color: var(--teal);
+}
+
+html[data-theme="dark"] :where(.affiliations, .section-mint, .site-footer, .pub .bibtex) {
+  background: #17302c;
+}
+
+html[data-theme="dark"] body:not(.page-home) .logo-light {
+  display: none;
+}
+
+html[data-theme="dark"] body:not(.page-home) .logo-dark {
+  display: block;
+}
+
+html[data-theme="dark"] body:not(.page-home) .site-header .nav-list a,
+html[data-theme="dark"] body:not(.page-home) .site-header .header-socials a,
+html[data-theme="dark"] body:not(.page-home) .site-header .theme-toggle,
+html[data-theme="dark"] body:not(.page-home) .site-header .menu-toggle {
+  color: var(--teal);
+}
+
+html[data-theme="dark"] body:not(.page-home) .site-header .nav-list a:hover,
+html[data-theme="dark"] body:not(.page-home) .site-header .nav-list a[aria-current="page"],
+html[data-theme="dark"] body:not(.page-home) .site-header .header-socials a:hover,
+html[data-theme="dark"] body:not(.page-home) .site-header .theme-toggle:hover {
+  color: var(--teal-mid);
+}
+
+html[data-theme="dark"] :where(
+  body:not(.page-home) .nav-list a,
+  body:not(.page-home) .menu-toggle,
+  body:not(.page-home) .header-socials a,
+  body:not(.page-home) .theme-toggle,
+  .mobile-nav a,
+  .mobile-close,
+  .mobile-nav .theme-toggle,
+  .mobile-nav .header-socials a,
+  .socials a,
+  .schedule .when,
+  .course-kicker
+) {
+  color: #f4faf8;
+}
+
+html[data-theme="dark"] .btn,
+html[data-theme="dark"] .btn-xs,
+html[data-theme="dark"] .pub .btn,
+html[data-theme="dark"] .pub .btn-xs {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .pub .authors,
+html[data-theme="dark"] .pub .venue,
+html[data-theme="dark"] .pub .self {
+  color: #f4faf8;
+}
+
+html[data-theme="dark"] .pub .pub-note {
+  color: #c5ddd8;
+}
+
+html[data-theme="dark"] .pub-thumb,
+html[data-theme="dark"] .software-card img,
+html[data-theme="dark"] .dataset-card img,
+html[data-theme="dark"] .media-row img {
+  background: #ffffff;
+  border-radius: 8px;
+}
+
+html[data-theme="dark"] .pub-thumb {
+  padding: 8px;
+}
+
+html[data-theme="dark"] .pub-thumb img {
+  border-radius: 4px;
+  background: #ffffff;
+}
+
+html[data-theme="dark"] .schedule > li {
+  border-color: #3d6a63;
+}
+
+html[data-theme="dark"] .mobile-nav a,
+html[data-theme="dark"] .mobile-nav .header-socials a,
+html[data-theme="dark"] .mobile-nav .theme-toggle,
+html[data-theme="dark"] .mobile-close {
+  color: #f4faf8;
 }
