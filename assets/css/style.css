@@ -375,6 +375,29 @@ body:not(.page-home) .menu-toggle {
   margin: 0 0 70px;
 }
 
+.hero-intro {
+  max-width: 52rem;
+}
+
+.hero-intro .hero-name {
+  margin: 0 0 28px;
+}
+
+.hero .btn-row {
+  margin-top: 28px;
+}
+
+.hero .btn {
+  background: transparent;
+  border: 1px solid var(--mint);
+  color: var(--white) !important;
+}
+
+.hero .btn:hover {
+  background: var(--mint);
+  color: var(--teal) !important;
+}
+
 .hero-portrait {
   width: min(340px, 100%);
   margin: 0 auto;
@@ -995,6 +1018,44 @@ body:not(.page-home) .menu-toggle {
   margin: 0 0 12px;
 }
 
+.bio-grid {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 48px;
+  align-items: start;
+  padding-bottom: 8px;
+}
+
+.bio-grid img {
+  width: 220px;
+  border-radius: 50%;
+}
+
+.bio-grid h2,
+.bio-grid h3 {
+  color: var(--teal);
+}
+
+.bio-grid .profile-name {
+  margin: 0 0 0.6em;
+  font-size: 2rem;
+}
+
+.bio-grid h3 {
+  margin: 1.1em 0 0.2em;
+}
+
+.bio-grid p {
+  margin: 0 0 1em;
+}
+
+.page-people .bio-grid {
+  max-width: 920px;
+  margin-bottom: 56px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid var(--mint-dark);
+}
+
 .research-sub,
 .section-intro {
   color: var(--teal);
@@ -1438,6 +1499,20 @@ body:not(.page-home) .menu-toggle {
     justify-content: center;
   }
 
+  .bio-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    justify-items: center;
+  }
+
+  .bio-grid img {
+    width: min(220px, 70vw);
+  }
+
+  .page-people .bio-grid {
+    text-align: left;
+  }
+
   .alumni-grid {
     grid-template-columns: 1fr;
   }
@@ -1583,6 +1658,16 @@ html[data-theme="dark"] .btn-xs,
 html[data-theme="dark"] .pub .btn,
 html[data-theme="dark"] .pub .btn-xs {
   color: #ffffff !important;
+}
+
+html[data-theme="dark"] .hero .btn:hover {
+  color: var(--teal) !important;
+}
+
+html[data-theme="dark"] .bio-grid h2,
+html[data-theme="dark"] .bio-grid h3,
+html[data-theme="dark"] .research-lead {
+  color: #f4faf8;
 }
 
 html[data-theme="dark"] .pub .authors,
