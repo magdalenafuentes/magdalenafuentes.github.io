@@ -68,11 +68,61 @@
 
   document.querySelectorAll(".bib-toggle").forEach((btn) => {
     btn.addEventListener("click", () => {
-      const bib = btn.closest(".btn-row")?.nextElementSibling;
+      const bib = (btn.getAttribute("aria-controls") && document.getElementById(btn.getAttribute("aria-controls"))) || btn.closest(".btn-row")?.nextElementSibling;
       if (!bib || !bib.classList.contains("bibtex")) return;
       const open = bib.classList.toggle("is-open");
       btn.classList.toggle("is-open", open);
       btn.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+  });
+
+  document.querySelectorAll(".copy-bio, .copy-bib").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const text = btn.classList.contains("copy-bib")
+        ? btn.parentElement.querySelector("pre")?.textContent.trim()
+        : btn.parentElement.querySelector(".bio-text")?.innerText.trim();
+      if (!text) return;
+      const show = (state) => {
+        btn.classList.toggle("is-copied", state === "copied");
+        btn.classList.toggle("is-failed", state === "failed");
+        btn.setAttribute("aria-label", state === "copied" ? "Copied" : state === "failed" ? "Copy failed" : "Copy");
+        window.setTimeout(() => {
+          btn.classList.remove("is-copied", "is-failed");
+          btn.setAttribute("aria-label", "Copy");
+        }, 1600);
+      };
+      const copyWithSelection = () => {
+        let copied = false;
+        const onCopy = (event) => {
+          event.preventDefault();
+          event.clipboardData.setData("text/plain", text);
+          copied = true;
+        };
+        document.addEventListener("copy", onCopy);
+        const area = document.createElement("textarea");
+        area.value = text;
+        area.setAttribute("readonly", "");
+        area.style.position = "fixed";
+        area.style.top = "0";
+        area.style.left = "0";
+        area.style.opacity = "0";
+        document.body.appendChild(area);
+        area.focus();
+        area.select();
+        document.execCommand("copy");
+        area.remove();
+        document.removeEventListener("copy", onCopy);
+        return copied;
+      };
+      if (copyWithSelection()) {
+        show("copied");
+        return;
+      }
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(() => show("copied")).catch(() => show("failed"));
+        return;
+      }
+      show("failed");
     });
   });
 })();

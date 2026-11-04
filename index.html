@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=16">
+  <link rel="stylesheet" href="assets/css/style.css?v=28">
 </head>
 <body class="page-home">
   <div class="mobile-nav" id="mobile-nav">
@@ -69,45 +69,159 @@
   
   <main>
     <section class="hero">
-      <div class="container">
-        <div class="hero-grid hero-desktop">
-          <div>
-            <h1 class="hero-name reveal-left">Magdalena Fuentes</h1>
-            <img class="hero-portrait reveal-left" src="assets/images/portrait.png" alt="Portrait of Magdalena Fuentes">
-          </div>
-          <div>
-            <img class="hero-kicker reveal" src="assets/images/pattern-home.png" alt="">
-            <div class="hero-bio reveal">
-              <p>My research explores how machines can make sense of music and the sounds around us. Together with my students, I develop signal processing and machine learning methods that help computers listen, interpret, and reason about sound.</p>
-              <p>I’m particularly interested in how sound connects with vision and language, what machine learning models actually understand about the acoustic world, and how we can make them more robust, interpretable, and reliable. Our work spans music information retrieval, environmental sound understanding, multimodal analysis and synthesis, and applications in accessibility and health.</p>
-            </div>
-          </div>
+      <div class="container hero-intro">
+        <div class="hero-bio reveal">
+          <h1>Introduction</h1>
+          <p>My research explores how machines can make sense of music and the sounds around us. Together with my students, I develop signal processing and machine learning methods that help computers listen, interpret, and reason about sound.</p>
+          <p>I’m particularly interested in how sound connects with vision and language, what machine learning models actually understand about the acoustic world, and how we can make them more robust, interpretable, and reliable. Our work spans music information retrieval, environmental sound understanding, multimodal analysis and synthesis, and applications in accessibility and health.</p>
         </div>
-        <div class="hero-mobile">
-          <h1 class="hero-name reveal-left">Magdalena Fuentes</h1>
-          <p class="hero-subtitle reveal-left">Multimodal Adaptive Audio<br>and Music Processing</p>
-          <img class="hero-portrait reveal-left" src="assets/images/portrait.png" alt="Portrait of Magdalena Fuentes">
-          <div class="hero-bio reveal">
-            <p>My research explores how machines can make sense of music and the sounds around us. Together with my students, I develop signal processing and machine learning methods that help computers listen, interpret, and reason about sound.</p>
-            <p>I’m particularly interested in how sound connects with vision and language, what machine learning models actually understand about the acoustic world, and how we can make them more robust, interpretable, and reliable. Our work spans music information retrieval, environmental sound understanding, multimodal analysis and synthesis, and applications in accessibility and health.</p>
-          </div>
+        <div class="btn-row reveal">
+          <a class="btn" href="publications/">Publications</a>
+          <a class="btn" href="people/">People</a>
         </div>
       </div>
     </section>
-    <section class="affiliations">
-      <div class="container affiliations-inner">
-        <div></div>
-        <div class="reveal">
-          <h2>Affiliations</h2>
-          <h3>Assistant Professor of Interactive Design, Music and Sound</h3>
-          <p>New York University<br>
-            <a href="https://steinhardt.nyu.edu/music/technology/">Music Technology</a> at Steinhardt School of Culture, Education, and Human Development.<br>
-            <a href="https://idm.engineering.nyu.edu/">Integrated Design &amp; Media (IDM)</a> at Tandon School of Engineering.
-          </p>
-          <h3>Core Faculty</h3>
-          <p><a href="https://steinhardt.nyu.edu/marl">Music and Audio Research Laboratory (MARL)</a></p>
-          <h3>Affiliated Faculty</h3>
-          <p><a href="https://engineering.nyu.edu/academics/departments/computer-science-engineering">Department of Computer Science and Engineering</a><br>Tandon School of Engineering, New York University</p>
+    <section class="page-main" id="selected">
+      <div class="container">
+        <h2 class="reveal">Selected work</h2>
+        <p class="section-intro reveal">Recent student-led projects.</p>
+        <div class="highlight-grid">
+          <article class="highlight-card reveal">
+            <img src="assets/images/papers/fig-mixcards-evaluating-structured-descriptions-of-mult.png?v=3" alt="Three cards describing speech, music, and sound effects in a mixed scene">
+            <p class="meta">Preprint · Sound scenes</p>
+            <h3>MixCards</h3>
+            <p>Structured descriptions of sound scenes made of several overlapping sources.</p>
+            <div class="btn-row">
+              <a class="btn" href="https://arxiv.org/pdf/2610.38276" target="_blank" rel="noopener">PDF</a>
+              <a class="btn" href="https://github.com/Sound-Captioning-for-Accessibility/mixcardbench" target="_blank" rel="noopener">Code</a>
+              <a class="btn" href="https://doi.org/10.5281/zenodo.23702059" target="_blank" rel="noopener">Dataset</a>
+              <a class="btn" href="https://mixcards-anon.github.io/mixcards-demo/" target="_blank" rel="noopener">Demo</a>
+            </div>
+          </article>
+          <article class="highlight-card reveal">
+            <img src="assets/images/papers/fig-trace-trustworthy-reasoning.png?v=2" alt="Diagram of acoustic evidence used to support a reasoning trace">
+            <p class="meta">Preprint · Trustworthy audio</p>
+            <h3>TRACE</h3>
+            <p>Reasoning about sound from acoustic cues and evidence that can be checked.</p>
+            <div class="btn-row">
+              <a class="btn" href="https://arxiv.org/pdf/2610.26894" target="_blank" rel="noopener">PDF</a>
+            </div>
+          </article>
+          <article class="highlight-card reveal">
+            <img src="assets/images/papers/fig-predicting-acoustic-fields-row.png" alt="A point-cloud scan split by height, beside reference and predicted acoustic maps">
+            <p class="meta">Preprint 2026 · Room acoustics</p>
+            <h3>Predicting Acoustic Fields from Point-Cloud Scans</h3>
+            <p>Estimating how a room sounds from a point-cloud scan of the space.</p>
+            <div class="btn-row">
+              <a class="btn" href="https://wuyi.io/research/point-cloud-acoustics/" target="_blank" rel="noopener">Project Page</a>
+            </div>
+          </article>
+          <article class="highlight-card reveal">
+            <img src="assets/images/papers/fig-spacing-out-row.png" alt="Binaural separation ratings beside an interaural-time-difference scatter plot">
+            <p class="meta">ISMIR 2026 · Source separation</p>
+            <h3>Spacing Out</h3>
+            <p>How reliable the usual metrics are for binaural music source separation.</p>
+            <div class="btn-row">
+              <a class="btn" href="https://arxiv.org/pdf/2607.25919" target="_blank" rel="noopener">PDF</a>
+              <a class="btn" href="https://richa-namballa.github.io/spacing-out-demo/" target="_blank" rel="noopener">Demo</a>
+            </div>
+          </article>
+          <article class="highlight-card reveal">
+            <img src="assets/images/papers/fig-silence-noise-row.png?v=2" alt="Localization maps in two rows and five columns: dinosaur, firetruck, silence, noise, and off-screen sound for SSL-Align and SSL-SaN">
+            <p class="meta">BMVC 2025 · Audio-visual learning</p>
+            <h3>Learning from Silence and Noise</h3>
+            <p>Visual sound source localization that learns from silence, noise, and off-screen sounds, not only from positive audio-visual pairs.</p>
+            <div class="btn-row">
+              <a class="btn" href="https://arxiv.org/pdf/2508.21761" target="_blank" rel="noopener">PDF</a>
+              <a class="btn" href="https://github.com/xavijuanola/SSL_SaN" target="_blank" rel="noopener">Code</a>
+              <a class="btn" href="https://zenodo.org/records/17064608" target="_blank" rel="noopener">Dataset</a>
+              <a class="btn" href="https://xavijuanola.github.io/SSL-SaN/" target="_blank" rel="noopener">Project Page</a>
+            </div>
+          </article>
+          <article class="highlight-card reveal">
+            <img src="assets/images/papers/fig-disentanglement-row.png" alt="A music representation model beside accuracy plotted against reconstruction error">
+            <p class="meta">WASPAA 2025 · Music representations</p>
+            <h3>Balancing Information Preservation and Disentanglement</h3>
+            <p>Self-supervised music representations that keep musical detail while separating the factors that shape it.</p>
+            <div class="btn-row">
+              <a class="btn" href="https://arxiv.org/pdf/2507.22995" target="_blank" rel="noopener">PDF</a>
+              <a class="btn" href="https://github.com/juliawilkins/ssl-music-dis" target="_blank" rel="noopener">Code</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="section-mint" id="awards">
+      <div class="container">
+        <h2 class="reveal">Awards</h2>
+        <div class="news-grid news-grid-4">
+          <article class="news-card reveal">
+            <time datetime="2025">2025</time>
+            <p>NYU Steinhardt Gabriel Carras Research Award for Promising Young Scholars.</p>
+          </article>
+          <article class="news-card reveal">
+            <time datetime="2024">2024</time>
+            <p>Google Award for Inclusion Research</p>
+          </article>
+          <article class="news-card reveal">
+            <time datetime="2019">2019</time>
+            <p>NYU Provost’s Postdoctoral Fellowship.</p>
+          </article>
+          <article class="news-card reveal">
+            <time datetime="2015">2015</time>
+            <p>Best undergraduate thesis award, National Academy of Engineering of Uruguay.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="page-main" id="support">
+      <div class="container">
+        <h2 class="reveal">Research support</h2>
+        <p class="section-intro reveal">Our work has been supported by the National Science Foundation, the National Institutes of Health, Google, Adobe, and NYU, in collaboration with colleagues at NYU and NJIT.</p>
+        <div class="funder-grid">
+          <article class="funder-card reveal">
+            <img class="funder-logo" src="assets/images/funders/nsf.png" alt="National Science Foundation">
+            <h3>HCC Medium</h3>
+            <p>AI-supported audio captioning of non-speech information, with Mark Cartwright and Sooyeon Lee (NJIT).</p>
+            <div class="btn-row">
+              <a class="btn btn-xs" href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2504643&amp;HistoricalAwards=false" target="_blank" rel="noopener">Award</a>
+              <a class="btn btn-xs" href="https://steinhardt.nyu.edu/news/music-technologys-magdalena-fuentes-receives-800k-award-national-science-foundation" target="_blank" rel="noopener">News</a>
+            </div>
+          </article>
+          <article class="funder-card reveal">
+            <img class="funder-logo funder-logo-nih" src="assets/images/funders/nih.png" alt="National Institutes of Health">
+            <h3>NIH R34</h3>
+            <p>Feasibility of a music listening intervention for mental health recovery after stroke, with Pablo Ripollés and Heidi Schambra.</p>
+            <div class="btn-row">
+              <a class="btn btn-xs" href="https://reporter.nih.gov/quickSearch/R34AT012943" target="_blank" rel="noopener">Award</a>
+              <a class="btn btn-xs" href="https://steinhardt.nyu.edu/news/marl-faculty-win-700000-nih-grant" target="_blank" rel="noopener">News</a>
+            </div>
+          </article>
+          <article class="funder-card reveal">
+            <img class="funder-logo funder-logo-wide" src="assets/images/funders/google.png" alt="Google">
+            <h3>Award for Inclusion Research</h3>
+            <p>Including Latin American culture in music information research.</p>
+            <div class="btn-row">
+              <a class="btn btn-xs" href="https://research.google/programs-and-events/past-programs/award-for-inclusion-research-program/" target="_blank" rel="noopener">Award</a>
+              <a class="btn btn-xs" href="https://engineering.nyu.edu/news/nyu-tandon-professor-wins-google-award-inclusion-research" target="_blank" rel="noopener">News</a>
+            </div>
+          </article>
+          <article class="funder-card reveal">
+            <img class="funder-logo funder-logo-wide" src="assets/images/funders/adobe.svg" alt="Adobe">
+            <h3>Research gift</h3>
+            <p>Support for research in audio understanding.</p>
+            <div class="btn-row">
+              <a class="btn btn-xs" href="https://research.adobe.com/collaborations/" target="_blank" rel="noopener">Adobe Research</a>
+            </div>
+          </article>
+          <article class="funder-card reveal">
+            <img class="funder-logo funder-logo-wide" src="assets/images/funders/nyu.svg" alt="New York University">
+            <h3>MARL seed grants</h3>
+            <p>AI-assisted tools for music therapy, and earlier work on sound captioning for accessibility.</p>
+            <div class="btn-row">
+              <a class="btn btn-xs" href="https://steinhardt.nyu.edu/marl/research/seed-award-program" target="_blank" rel="noopener">Program</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
