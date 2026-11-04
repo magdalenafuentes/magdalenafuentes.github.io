@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    try {
+      var savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "dark" || savedTheme === "light") document.documentElement.setAttribute("data-theme", savedTheme);
+    } catch (e) {}
+  </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Music Information Retrieval – Magdalena Fuentes</title>
@@ -9,9 +15,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="stylesheet" href="../../assets/css/style.css?v=16">
 </head>
-<body class="page-resources">
+<body class="page-course">
   <div class="mobile-nav" id="mobile-nav">
     <button class="mobile-close" type="button" aria-label="Close menu">&times;</button>
     <ul>
@@ -21,13 +27,31 @@
             <li><a href="../../activities/"><span>Activities</span></a></li>
             <li><a href="../../resources/" aria-current="page"><span>Resources</span></a></li>
     </ul>
+
+        <ul class="header-socials" aria-label="Profiles">
+          <li><a href="https://scholar.google.com/citations?user=gz7oJAoAAAAJ" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg></a></li>
+          <li><a href="https://github.com/magdalenafuentes" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.09-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a></li>
+          <li><a href="https://www.linkedin.com/in/mfu3ntes/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a></li>
+          <li><a href="https://orcid.org/0000-0003-4506-6639" target="_blank" rel="noopener" aria-label="ORCID" title="ORCID"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.37 4.368c.745 0 1.33.615 1.33 1.358 0 .745-.585 1.353-1.33 1.353-.746 0-1.348-.608-1.348-1.353 0-.743.602-1.358 1.348-1.358zm.955 3.497v10.272H6.418V7.865h1.907zm3.032 0h3.636c3.494 0 5.04 2.184 5.04 5.137 0 3.012-1.81 5.135-5.415 5.135h-3.261V7.865zm1.907 1.69v6.89h1.588c2.294 0 3.41-1.274 3.41-3.409 0-2.18-1.085-3.481-3.341-3.481h-1.657z"/></svg></a></li>
+          <li><a href="mailto:mfuentes@nyu.edu" aria-label="Email" title="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a></li>
+        </ul>
+    <button class="theme-toggle" type="button" aria-label="Switch to dark theme" title="Switch to dark theme" aria-pressed="false"><svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21 14.5A8.5 8.5 0 0 1 9.5 3 7 7 0 1 0 21 14.5z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 7a5 5 0 100 10 5 5 0 000-10zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.5 11H.5v2h3v-2zm20 0h-3v2h3v-2zM5.6 4.2L3.5 2.1 2.1 3.5l2.1 2.1 1.4-1.4zm14.8 14.8l-2.1-2.1-1.4 1.4 2.1 2.1 1.4-1.4zM18.4 4.2l1.4 1.4 2.1-2.1-1.4-1.4-2.1 2.1zM4.2 18.4l1.4-1.4-2.1-2.1-1.4 1.4 2.1 2.1z"/></svg></button>
   </div>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="logo" href="../../">
+      <div class="header-brand"><a class="logo" href="../../">
         <img class="logo-light" src="../../assets/images/logo-white.svg" alt="Magdalena Fuentes">
         <img class="logo-dark" src="../../assets/images/logo.svg" alt="Magdalena Fuentes">
       </a>
+      <ul class="header-socials" aria-label="Profiles">
+          <li><a href="https://scholar.google.com/citations?user=gz7oJAoAAAAJ" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg></a></li>
+          <li><a href="https://github.com/magdalenafuentes" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.09-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a></li>
+          <li><a href="https://www.linkedin.com/in/mfu3ntes/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a></li>
+          <li><a href="https://orcid.org/0000-0003-4506-6639" target="_blank" rel="noopener" aria-label="ORCID" title="ORCID"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.37 4.368c.745 0 1.33.615 1.33 1.358 0 .745-.585 1.353-1.33 1.353-.746 0-1.348-.608-1.348-1.353 0-.743.602-1.358 1.348-1.358zm.955 3.497v10.272H6.418V7.865h1.907zm3.032 0h3.636c3.494 0 5.04 2.184 5.04 5.137 0 3.012-1.81 5.135-5.415 5.135h-3.261V7.865zm1.907 1.69v6.89h1.588c2.294 0 3.41-1.274 3.41-3.409 0-2.18-1.085-3.481-3.341-3.481h-1.657z"/></svg></a></li>
+          <li><a href="mailto:mfuentes@nyu.edu" aria-label="Email" title="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a></li>
+        </ul>
+      </div>
+      <div class="header-tools">
       <nav class="desktop-nav" aria-label="Primary">
         <ul class="nav-list">
             <li><a href="../../"><span>Home</span></a></li>
@@ -37,95 +61,115 @@
             <li><a href="../../resources/" aria-current="page"><span>Resources</span></a></li>
         </ul>
       </nav>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark theme" title="Switch to dark theme" aria-pressed="false"><svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21 14.5A8.5 8.5 0 0 1 9.5 3 7 7 0 1 0 21 14.5z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 7a5 5 0 100 10 5 5 0 000-10zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.5 11H.5v2h3v-2zm20 0h-3v2h3v-2zM5.6 4.2L3.5 2.1 2.1 3.5l2.1 2.1 1.4-1.4zm14.8 14.8l-2.1-2.1-1.4 1.4 2.1 2.1 1.4-1.4zM18.4 4.2l1.4 1.4 2.1-2.1-1.4-1.4-2.1 2.1zM4.2 18.4l1.4-1.4-2.1-2.1-1.4 1.4 2.1 2.1z"/></svg></button>
       <button class="menu-toggle" type="button" aria-label="Open menu"><span></span></button>
+      </div>
     </div>
   </header>
   
   <main class="page-main">
     <div class="container course">
-      <h1>MPATE-GE 2623: Music Information Retrieval</h1>
-      <div class="meta">
-        <p><strong>Instructor:</strong> Assist. Prof. Magdalena Fuentes, PhD<br>
-        <strong>Email:</strong> <a href="mailto:mfuentes@nyu.edu">mfuentes@nyu.edu</a><br>
-        Fall 2023, 3 credits<br>
-        <strong>Class meetings:</strong> 12:00 PM – 1:40 PM W<br>
-        <strong>Classroom:</strong> 35 West 4th Street, EDUC building, room 610<br>
-        <strong>Office hours:</strong> <a href="https://bit.ly/mf_office_hours">https://bit.ly/mf_office_hours</a></p>
-      </div>
-      <h2>Course description</h2>
-      <p>This course gives a comprehensive overview of research in Music Information Retrieval (MIR). MIR is a multidisciplinary field which uses knowledge from areas as diverse as signal processing, machine learning, cognition and music theory. The course will explore how this knowledge is applied to different problems within MIR, with an emphasis on common research methodologies.</p>
-      <h2>Course objectives</h2>
-      <p>The goal of this course is to provide students with:</p>
+      <p class="course-kicker">Syllabus sample · Fall 2025 · 3 credits</p>
+      <h1>Music Information Retrieval</h1>
+      <p class="course-code">MPATE-GE 2623</p>
+
+      <h2>Overview</h2>
+      <p>This course gives a comprehensive overview of research in Music Information Retrieval (MIR). MIR is a multidisciplinary field which uses knowledge from areas as diverse as signal processing, machine learning, cognition and music theory. The course explores how this knowledge is applied to different problems within MIR, with an emphasis on common research methodologies.</p>
+      <p>The goal of the course is to provide students with:</p>
       <ul>
         <li>Broad knowledge of common topics in MIR, including their definitions, challenges, and evaluation metrics.</li>
         <li>Awareness of the current state-of-the art and remaining challenges for each topic.</li>
         <li>The ability to critically analyze the behavior of MIR systems.</li>
         <li>Practical skills for working with open source MIR resources in Python.</li>
       </ul>
-      <h2>Student Learning Outcomes</h2>
+      <p>By the end of the course, students will be able to explain common MIR tasks, code MIR pipelines with open source Python libraries, assess the behavior of MIR systems, and explain current trends in MIR research.</p>
+
+      <h2>Logistics</h2>
+      <dl class="logistics">
+        <dt>Instructor</dt><dd>Prof. Magdalena Fuentes</dd>
+        <dt>Meetings</dt><dd>Wednesdays, 12:00–1:40 PM</dd>
+        <dt>Classroom</dt><dd>35 West 4th Street, EDUC building, room 610</dd>
+        <dt>Materials</dt><dd>A computer with Internet access. Classes are in person unless noted, and materials are on <a href="https://brightspace.nyu.edu">NYU Brightspace</a>.</dd>
+        <dt>Preparation</dt><dd>Basic knowledge of Python programming and digital signal theory.</dd>
+      </dl>
+
+      <h2>Requirements</h2>
+      <p>The course is participatory. Meetings mix conversational lectures and group readings. Readings follow the <a href="https://colinraffel.com/blog/role-playing-seminar.html">role-playing paper-reading format</a> of Jacobson and Raffel: everyone reads the same paper, and each student takes one of three roles. Roles are set at the start of the course, and each student takes one role during the semester. Papers are assigned in the first week. A short guide on <a href="https://web.stanford.edu/class/ee384m/Handouts/HowtoReadPaper.pdf">how to read a paper</a> is part of the preparation.</p>
+      <p>There are 3 individual homework assignments, each with Python code and a written component, and two weeks to complete each one. The lowest homework score is dropped.</p>
+      <p>There are 3 individual annotation assignments. In each one, students annotate a few snippets to generate data for an MIR task covered in class, with two weeks to complete each assignment.</p>
+      <p>The final project is done in groups of 2–3 and covers an MIR task defined by the instructor. Every project includes a baseline for comparison. It has three parts:</p>
       <ul>
-        <li>Explain and describe common tasks in MIR, including definitions, challenges and evaluation metrics.</li>
-        <li>Code MIR pipelines using open source Python libraries.</li>
-        <li>Assess and analyze the behavior of MIR systems.</li>
-        <li>Explain current trends in MIR research.</li>
+        <li><strong>Data report.</strong> A short report describing the data the group will use, with examples, and how they plan to use it. Groups collecting or creating data describe that plan and the resulting dataset. This assignment is required and is not part of the project grade.</li>
+        <li><strong>Documented code.</strong> Working code in a GitHub repository that runs out of the box, with instructions for where to place the data, plus the data that was investigated. The code should be organized and documented, explain the decisions made, and present a rigorous analysis.</li>
+        <li><strong>Final presentation.</strong> Every member of the group presents. Presentations last 5–10 minutes, include slides and a demo, and are followed by a short question period.</li>
       </ul>
-      <h2>Recommended Skills</h2>
-      <p>Basic knowledge of Python programming and Digital Signal Theory are required.</p>
-      <h2>Required Course Materials</h2>
-      <p>A computer with Internet access.</p>
-      <h2>Course Requirements</h2>
-      <h3>Class participation</h3>
-      <p>This course will be highly participatory and interactive. We will have conversational lectures and group readings. For the class readings, we follow the role-playing paper reading format of Jacobson and Raffel. Each student will participate by choosing one role in the semester.</p>
-      <h3>Homework assignments</h3>
-      <p>There will be 4 homework assignments. Each assignment will consist of Python code snippets and written components. These assignments are individual. You will have two weeks to complete each assignment. Your lowest score will be dropped.</p>
-      <h3>Final Project</h3>
-      <p>The final project can be done in groups of 2-3, and will have a code and presentation component. A project can cover the assessment of an existing MIR system in new data, or a new system proposed by the students. All projects should include a baseline system for comparison.</p>
-      <p>Your grade for the class will be determined by the following break-down:</p>
-      <ul>
-        <li>40% assignments (individual)</li>
+      <ul class="grading">
+        <li>30% homeworks (individual)</li>
+        <li>10% annotations (individual)</li>
         <li>40% final project (groups)</li>
         <li>20% class participation (individual)</li>
       </ul>
-      <h2>Recommended Readings</h2>
+
+      <h2>Schedule</h2>
+      <ol class="schedule">
+        <li><span class="when">Week 0</span><div><h3>Supplemental materials</h3><ul><li><a href="https://cs231n.github.io/python-numpy-tutorial/">Python and NumPy tutorial</a></li><li><a href="https://classroom.github.com/a/6-fk2GNt">GitHub starter course</a></li></ul></div></li>
+        <li><span class="when">Week 1 · Sep 3</span><div><h3>Course introduction and music representations</h3><p>Class meets online.</p><ul><li>Overview of the MIR field, course structure, and GitHub Classroom</li><li>Sheet music, piano roll, MIDI, and audio</li><li>Practice: GitHub Classroom</li><li>Assign paper readings for the semester</li></ul></div></li>
+        <li><span class="when">Week 2 · Sep 10</span><div><h3>Time-frequency representations</h3><ul><li>Short-time Fourier transform, log-frequency spectrogram, and constant-Q transform</li><li>Recommended reading: <a href="https://brianmcfee.net/dstbook-site/content/intro.html">McFee, Digital Signals Theory</a>, chapters 5 and 9</li><li>Role-playing paper reading</li></ul></div></li>
+        <li><span class="when">Week 3 · Sep 17</span><div><h3>Machine learning and MIR</h3><ul><li>Supervised learning, features, train/validation/test, classifiers, metrics, and data augmentation</li><li>Recommended reading: <a href="https://ebookcentral.proquest.com/lib/nyulibrary-ebooks/reader.action?docID=3005765">Murphy, chapter 1, or Shalev-Shwartz, chapters 1 and 2</a></li><li>Role-playing paper reading</li><li>Assign homework 1 and annotation 1</li></ul></div></li>
+        <li><span class="when">Week 4 · Sep 24</span><div><h3>Sound classification</h3><ul><li>Instrument identification, mel-frequency cepstral coefficients, confusion matrices, and precision, recall, and F-measure</li><li>Pitch shifting, time stretching, resampling, background noise, and dynamic range compression</li><li>Recommended reading: <a href="https://medium.com/prathena/the-dummys-guide-to-mfcc-aceab2450fd">MFCC guide</a> and Fundamentals of Music Processing 4.5.1</li><li>Role-playing paper reading</li></ul></div></li>
+        <li><span class="when">Week 5 · Oct 1</span><div><h3>Beats and downbeats</h3><ul><li>Beat and downbeat tracking, onsets and novelty curves, and metrics</li><li>Recommended reading: Fundamentals of Music Processing 6.1.1 and 6.3, and the <a href="https://tempobeatdownbeat.github.io/tutorial/intro.html">ISMIR tempo, beat, and downbeat tutorial</a></li><li>Role-playing paper reading</li><li>Homework 1 and annotation 1 due. Assign homework 2 and annotation 2</li></ul></div></li>
+        <li><span class="when">Week 6 · Oct 8</span><div><h3>Music similarity</h3><ul><li>What similarity is, embeddings, fingerprinting, version identification, and music recommendation</li><li>Recommended reading: Fundamentals of Music Processing 3.2, 7.2, and 7.3</li><li>Role-playing paper reading</li></ul></div></li>
+        <li><span class="when">Week 7 · Oct 15</span><div><h3>Chords</h3><ul><li>Chord estimation, chroma, and metrics</li><li>Recommended reading: Fundamentals of Music Processing 3.1.2 and 5</li><li>Role-playing paper reading</li><li>Homework 2 and annotation 2 due. Assign homework 3 and annotation 3</li></ul></div></li>
+        <li><span class="when">Week 8 · Oct 22</span><div><h3>Pitch</h3><ul><li>Pitch tracking, melody estimation, salience representations, and metrics</li><li>Recommended reading: Fundamentals of Music Processing 1.3.2, 1.3.3, and 8.2</li><li>Role-playing paper reading</li><li>Homework 3 and annotation 3 due</li></ul></div></li>
+        <li><span class="when">Week 9 · Oct 29</span><div><h3>Transcription</h3><ul><li>Transcription, non-negative matrix factorization, and metrics</li><li>Recommended reading: Fundamentals of Music Processing 8.3</li></ul></div></li>
+        <li><span class="when">Week 10 · Nov 5</span><div><h3>Project discussion</h3><ul><li>Assign the project</li></ul></div></li>
+        <li><span class="when">Week 11 · Nov 12</span><div><h3>Source separation</h3><ul><li>Harmonic-percussive separation, instrument separation, stems, and metrics</li><li>Recommended reading: Fundamentals of Music Processing 8.1 and the <a href="https://source-separation.github.io/tutorial/landing.html">ISMIR source-separation tutorial</a></li></ul></div></li>
+        <li><span class="when">Week 12 · Nov 19</span><div><h3>Multimodal MIR</h3><ul><li>Overview and applications of multimodal machine learning in MIR</li><li>Building multimodal models, embedding spaces, and contrastive loss</li><li>Project data analysis due</li></ul></div></li>
+        <li><span class="when">Week 13 · Nov 26</span><div><h3>No class</h3><p>Thanksgiving.</p></div></li>
+        <li><span class="when">Week 14 · Dec 3</span><div><h3>Music generation</h3><ul><li>Overview and applications of generative models in MIR</li><li>Stable diffusion models and variational models</li></ul></div></li>
+        <li><span class="when">Week 15 · Dec 10</span><div><h3>Final presentations</h3><ul><li>Project presentation and code due</li></ul></div></li>
+      </ol>
+
+      <h2>Readings</h2>
       <ul>
-        <li><a href="https://www.audiolabs-erlangen.de/fau/professor/mueller/bookFMP">Meinard Müller, Fundamentals of Music Processing (FMP)</a></li>
+        <li><a href="https://link.springer.com/book/10.1007/978-3-030-69808-9">Meinard Müller, Fundamentals of Music Processing</a></li>
       </ul>
-      <p>Other recommended readings are suggested in the weekly schedule.</p>
-      <h2>Class Environment</h2>
-      <p>Please do your part by seeking to promote the success of others, and by treating each other in ways that respect and celebrate the diversity of talent. Policies on preparation, accessibility (Moses Center, 212-998-4980), mental health (NYU Wellness Exchange, 212-443-9999), preferred names and pronouns, class expenses, feedback, academic integrity, and inclusion match those of my other courses.</p>
-      <h2>Resources at NYU</h2>
-      <p><a href="https://brightspace.nyu.edu">NYU Brightspace</a> · <a href="https://library.nyu.edu">Bobst Library</a> · <a href="https://nyu.mywconline.com">NYU Writing Center</a> · <a href="https://nyu.edu/it/servicedesk">IT Service Desk</a></p>
-      <h2>Weekly Schedule</h2>
-      <div class="week"><strong>Week 0: Supplemental materials</strong><ul><li>Python/Numpy tutorial and GitHub starter course</li></ul></div>
-      <div class="week"><strong>Week 1, 09/06: Course introduction &amp; Music representations</strong><ul><li>Overview of MIR field, course structure, GitHub classroom</li><li>Sheet music, piano-roll, MIDI, audio</li><li>ASSIGN: paper readings for the semester</li></ul></div>
-      <div class="week"><strong>Week 2, 09/13: Time-Frequency Representations</strong><ul><li>STFT, log-frequency spectrogram, constant-Q transform</li><li>Recommended reading: McFee’s Digital Signals Theory, Chapters 5 and 9</li></ul></div>
-      <div class="week"><strong>Week 3, 09/20: Machine Learning and MIR</strong><ul><li>Supervised learning, features, train/validation/test, classifiers, metrics, data augmentation</li><li>ASSIGN: Homework 1</li></ul></div>
-      <div class="week"><strong>Week 4, 09/27: Sound Classification</strong><ul><li>Instrument identification, MFCCs, confusion matrices, precision/recall/F-measure</li><li>Pitch shifting, time stretching, resampling, background noise, dynamic range compression</li></ul></div>
-      <div class="week"><strong>Week 5, 10/04: Beats and Downbeats</strong><ul><li>Beat and downbeat tracking, onsets and novelty curves, metrics</li><li>Recommended reading: FMP 6.1.1, 6.3 and ISMIR tutorial</li><li>DUE: Homework 1 · ASSIGN: Homework 2</li></ul></div>
-      <div class="week"><strong>Week 6, 10/11: Music Similarity</strong><ul><li>Embeddings, fingerprinting, version identification, music recommendation</li><li>Recommended reading: FMP 3.2, 7.2, 7.3</li></ul></div>
-      <div class="week"><strong>Week 7, 10/18: Chords [Class ONLINE]</strong><ul><li>Chord estimation, chroma, metrics</li><li>DUE: Homework 2 · ASSIGN: Homework 3</li></ul></div>
-      <div class="week"><strong>Week 8, 10/25: Open Week</strong></div>
-      <div class="week"><strong>Week 9, 11/01: Pitch</strong><ul><li>Pitch tracking, melody estimation, salience representations</li><li>DUE: Homework 3 · ASSIGN: Homework 4</li></ul></div>
-      <div class="week"><strong>Week 10, 11/08: Transcription</strong><ul><li>Transcription, non-negative matrix factorization, metrics</li><li>ASSIGN: project topic, data and baseline</li></ul></div>
-      <div class="week"><strong>Week 11, 11/15: Source Separation</strong><ul><li>Harmonic-percussive and instrument separation, stems, metrics</li><li>DUE: project topic, data and baseline · DUE: Homework 4 · ASSIGN: project code and data</li></ul></div>
-      <div class="week"><strong>Week 12, 11/22: NO CLASS (Thanksgiving)</strong></div>
-      <div class="week"><strong>Week 13, 11/29: Multimodal MIR</strong><ul><li>Overview and applications, embedding space, contrastive loss</li></ul></div>
-      <div class="week"><strong>Week 14, 12/06: Music Generation</strong><ul><li>Stable diffusion models, variational models</li><li>DUE: project code and data · ASSIGN: project presentation</li></ul></div>
-      <div class="week"><strong>Week 15, 12/13: Final Presentations</strong><ul><li>DUE: project presentation</li></ul></div>
+      <p>Other recommended readings are listed in the weekly schedule.</p>
+
+      <h2>Grades</h2>
+      <ul>
+        <li>A: 94.45% and higher</li>
+        <li>A−: 89.45–94.44%</li>
+        <li>B+: 86.45–89.44%</li>
+        <li>B: 82.45–86.44%</li>
+        <li>B−: 79.45–82.44%</li>
+        <li>C+: 76.45–79.44%</li>
+        <li>C: 72.45–76.44%</li>
+        <li>C−: 69.45–72.44%</li>
+        <li>D+: 66.45–69.44%</li>
+        <li>D: 62.45–66.44%</li>
+        <li>F: 62.44% and lower</li>
+      </ul>
+
+      <h2>Policies</h2>
+      <p>Please do your part by seeking to promote the success of others, and by treating each other in ways that respect and celebrate the diversity of talent.</p>
+      <ul>
+        <li><strong>Preparation.</strong> Students come from a wide range of backgrounds. If you feel there are gaps in your knowledge, talk with me and I will help you find additional materials.</li>
+        <li><strong>Classroom.</strong> Class is an open forum. Ask any question, including the ones that feel basic.</li>
+        <li><strong>Accessibility.</strong> If you have accessibility requirements, present a letter from the <a href="https://www.nyu.edu/about/leadership-university-administration/office-of-the-president/office-of-the-provost/university-life/office-of-studentaffairs/student-health-center/moses-center-for-student-accessibility.html">Moses Center</a> (212-998-4980) so materials can meet them.</li>
+        <li><strong>Mental health.</strong> The <a href="https://www.nyu.edu/students/health-and-wellness/wellness-exchange.html">NYU Wellness Exchange</a> (212-443-9999) offers a range of services. I am available to talk about stresses related to work in this course.</li>
+        <li><strong>Names and pronouns.</strong> You are welcome to use your preferred name on assignments. If your name or pronouns differ from the roster, please tell me.</li>
+        <li><strong>Expenses.</strong> If obtaining any material for class is a financial hardship, tell me and I will try to arrange a loaner.</li>
+        <li><strong>Feedback.</strong> I ask for anonymous feedback during the semester. Tell me if any part of the course or the class community can be improved.</li>
+        <li><strong>Academic integrity.</strong> Homework is individual work. You must be able to explain anything you submit. See the <a href="https://www.nyu.edu/about/policies-guidelines-compliance/policies-and-guidelines/academic-integrity-for-students-at-nyu.html">NYU academic integrity statement</a>.</li>
+        <li><strong>Generative AI.</strong> Tools such as ChatGPT may be used only on assignments where they support the learning goals, and not as a substitute for critical thinking. If you use one for any part of an assignment, cite it. You are not required to use them.</li>
+        <li><strong>Inclusion.</strong> NYU values an inclusive and equitable environment. If that standard is not being upheld, please speak with me.</li>
+      </ul>
+      <p><a href="https://brightspace.nyu.edu">NYU Brightspace</a> · <a href="https://library.nyu.edu">Bobst Library</a> · <a href="https://nyu.mywconline.com">NYU Writing Center</a> · <a href="https://www.nyu.edu/it/servicedesk">IT Service Desk</a></p>
     </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <ul class="socials">
-        <li><a href="https://scholar.google.com/citations?user=gz7oJAoAAAAJ" target="_blank" rel="noopener"> <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg> <span>Google Scholar</span></a></li>
-        <li><a href="https://www.linkedin.com/in/mfu3ntes/" target="_blank" rel="noopener"> <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> <span>LinkedIn</span></a></li>
-        <li><a href="https://github.com/magdalenafuentes" target="_blank" rel="noopener"> <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.09-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg> <span>GitHub</span></a></li>
-        <li><a href="https://orcid.org/0000-0003-4506-6639" target="_blank" rel="noopener"> <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.37 4.368c.745 0 1.33.615 1.33 1.358 0 .745-.585 1.353-1.33 1.353-.746 0-1.348-.608-1.348-1.353 0-.743.602-1.358 1.348-1.358zm.955 3.497v10.272H6.418V7.865h1.907zm3.032 0h3.636c3.494 0 5.04 2.184 5.04 5.137 0 3.012-1.81 5.135-5.415 5.135h-3.261V7.865zm1.907 1.69v6.89h1.588c2.294 0 3.41-1.274 3.41-3.409 0-2.18-1.085-3.481-3.341-3.481h-1.657z"/></svg> <span>ORCID</span></a></li>
-        <li><a href="mailto:mfuentes@nyu.edu"> <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> <span>Email</span></a></li>
-      </ul>
-    </div>
-  </footer>
-  <script src="../../assets/js/main.js"></script>
+
+  <script src="../../assets/js/main.js?v=4"></script>
 </body>
 </html>
