@@ -419,6 +419,14 @@ body:not(.page-home) .menu-toggle {
   font-weight: 400;
 }
 
+.hero-bio h1 {
+  margin: 0 0 18px;
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--white);
+}
+
 .hero-bio p {
   margin: 0 0 1em;
 }
@@ -519,6 +527,43 @@ body:not(.page-home) .menu-toggle {
   text-transform: none;
 }
 
+.copy-bib,
+.copy-bio {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 26px;
+  padding: 0;
+}
+
+.copy-bib svg,
+.copy-bio svg {
+  width: 15px;
+  height: 15px;
+  min-width: 15px;
+  flex: 0 0 15px;
+  display: block;
+  overflow: visible;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.copy-bib .copy-check,
+.copy-bio .copy-check,
+.copy-bib.is-copied .copy-icon,
+.copy-bio.is-copied .copy-icon {
+  display: none;
+}
+
+.copy-bib.is-copied .copy-check,
+.copy-bio.is-copied .copy-check {
+  display: block;
+}
+
 .btn-round {
   border-radius: 999px;
   padding: 8px 16px;
@@ -593,6 +638,56 @@ body:not(.page-home) .menu-toggle {
   border-radius: 8px;
   padding: 7px 14px;
   font-size: 13px;
+}
+
+.page-people .page-title {
+  margin-bottom: 48px;
+}
+
+.person-self {
+  grid-template-columns: 168px minmax(280px, 680px);
+  align-items: start;
+  justify-content: start;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 0 64px;
+  text-align: left;
+}
+
+.person .bibtex {
+  display: none;
+  margin: 14px 0 0;
+  padding: 14px 16px;
+  max-width: 100%;
+  background: var(--mint);
+  color: var(--teal);
+  border-radius: 8px;
+  font-size: 15px;
+  line-height: 1.55;
+  white-space: normal;
+}
+
+.person .bibtex.is-open {
+  display: block;
+}
+
+.person-self .bibtex {
+  grid-column: 1 / -1;
+}
+
+.person .bio-text p {
+  margin: 0 0 0.85em;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--teal);
+}
+
+.person .bio-text p:last-child {
+  margin-bottom: 0;
+}
+
+.person .copy-bio {
+  margin: 0 0 12px;
 }
 
 .person .btn:hover,
@@ -732,8 +827,23 @@ body:not(.page-home) .menu-toggle {
   border-radius: 8px;
   font-size: 12px;
   line-height: 1.45;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.pub .bibtex pre {
+  margin: 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12px;
+  line-height: 1.45;
   white-space: pre-wrap;
   overflow-wrap: anywhere;
+  background: transparent;
+  color: inherit;
+}
+
+.pub .copy-bib {
+  margin: 0 0 10px;
 }
 
 .pub .bibtex.is-open {
@@ -999,7 +1109,6 @@ body:not(.page-home) .menu-toggle {
 /* Research overview and Join */
 .page-research .page-title,
 .page-join .page-title,
-.page-people .page-title,
 .page-activities .page-title {
   margin-bottom: 18px;
 }
@@ -1008,6 +1117,48 @@ body:not(.page-home) .menu-toggle {
 .page-join h2,
 .page-activities h2 {
   margin: 0 0 12px;
+}
+
+.page-activities #mentoring {
+  margin-top: 64px;
+  scroll-margin-top: calc(var(--header-h) + 16px);
+}
+
+.page-activities .community-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.page-activities .community-grid .theme-card h3 {
+  margin-left: 14px;
+  margin-right: 14px;
+  font-size: 1rem;
+}
+
+.page-activities .community-grid .theme-card p {
+  margin-left: 14px;
+  margin-right: 14px;
+  font-size: 13.5px;
+}
+
+.page-activities .theme-card img,
+.page-activities .theme-card .community-banner {
+  height: 88px;
+  margin-bottom: 14px;
+}
+
+.page-activities .theme-card .community-banner .community-logo,
+.page-activities .theme-card .community-banner .community-logo-lamir,
+.page-activities .theme-card .community-banner .community-logo-ieee,
+.page-activities .theme-card .community-banner .community-logo-ismir,
+.page-activities .theme-card .community-banner .community-logo-dcase {
+  max-width: 78%;
+  max-height: 70%;
+}
+
+.page-activities .community-banner-dcase {
+  background: #000;
 }
 
 .research-lead {
@@ -1168,14 +1319,17 @@ body:not(.page-home) .menu-toggle {
 .highlight-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 32px 28px;
+  gap: 56px 28px;
 }
 
 .highlight-card img {
   width: 100%;
-  height: 160px;
+  height: auto;
+  aspect-ratio: 1722 / 549;
   object-fit: contain;
-  background: var(--mint);
+  object-position: center;
+  background: #fff;
+  border-radius: 6px;
   margin-bottom: 14px;
 }
 
@@ -1477,10 +1631,17 @@ body:not(.page-home) .menu-toggle {
   }
 }
 
+@media (max-width: 980px) {
+  .page-activities .community-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 640px) {
   .dataset-grid,
   .theme-grid,
   .theme-grid-3,
+  .page-activities .community-grid,
   .highlight-grid,
   .news-grid,
   .news-grid-4,
@@ -1511,6 +1672,15 @@ body:not(.page-home) .menu-toggle {
 
   .page-people .bio-grid {
     text-align: left;
+  }
+
+  .person-self {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+
+  .person-self > div {
+    width: 100%;
   }
 
   .alumni-grid {
@@ -1611,7 +1781,7 @@ html[data-theme="dark"] body:not(.page-home) .site-header.is-sticky {
   border-bottom-color: var(--teal);
 }
 
-html[data-theme="dark"] :where(.affiliations, .section-mint, .site-footer, .pub .bibtex) {
+html[data-theme="dark"] :where(.affiliations, .section-mint, .site-footer, .pub .bibtex, .person .bibtex) {
   background: #17302c;
 }
 
@@ -1670,6 +1840,15 @@ html[data-theme="dark"] .research-lead {
   color: #f4faf8;
 }
 
+html[data-theme="dark"] .person .bibtex {
+  background: #17302c;
+  color: #d7e6e2;
+}
+
+html[data-theme="dark"] .person .bio-text p {
+  color: #d7e6e2;
+}
+
 html[data-theme="dark"] .pub .authors,
 html[data-theme="dark"] .pub .venue,
 html[data-theme="dark"] .pub .self {
@@ -1706,4 +1885,32 @@ html[data-theme="dark"] .mobile-nav .header-socials a,
 html[data-theme="dark"] .mobile-nav .theme-toggle,
 html[data-theme="dark"] .mobile-close {
   color: #f4faf8;
+}
+
+html[data-theme="dark"] #awards {
+  background: #10211e;
+}
+
+html[data-theme="dark"] #awards .news-card {
+  background: var(--mint);
+  color: var(--ink);
+  border-radius: 8px;
+  border-top: 0;
+  padding: 22px 18px 20px;
+}
+
+html[data-theme="dark"] #awards .news-card time,
+html[data-theme="dark"] #awards .news-card p {
+  color: var(--ink);
+}
+
+html[data-theme="dark"] .funder-card {
+  background: var(--mint);
+  color: var(--ink);
+}
+
+html[data-theme="dark"] .funder-card h3,
+html[data-theme="dark"] .funder-card p,
+html[data-theme="dark"] .funder-wordmark {
+  color: var(--ink);
 }

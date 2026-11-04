@@ -15,14 +15,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/style.css?v=17">
+  <link rel="stylesheet" href="../assets/css/style.css?v=24">
 </head>
 <body class="page-people">
   <div class="mobile-nav" id="mobile-nav">
     <button class="mobile-close" type="button" aria-label="Close menu">&times;</button>
     <ul>
             <li><a href="../"><span>Home</span></a></li>
-            <li><a href="../research/"><span>Research</span></a></li>
             <li><a href="../publications/"><span>Publications</span></a></li>
             <li><a href="../people/" aria-current="page"><span>People</span></a></li>
             <li><a href="../activities/"><span>Activities</span></a></li>
@@ -56,7 +55,6 @@
       <nav class="desktop-nav" aria-label="Primary">
         <ul class="nav-list">
             <li><a href="../"><span>Home</span></a></li>
-            <li><a href="../research/"><span>Research</span></a></li>
             <li><a href="../publications/"><span>Publications</span></a></li>
             <li><a href="../people/" aria-current="page"><span>People</span></a></li>
             <li><a href="../activities/"><span>Activities</span></a></li>
@@ -72,23 +70,25 @@
   <main class="page-main">
     <div class="container">
       <h1 class="page-title reveal">People</h1>
-      <div class="bio-grid">
-        <img class="reveal" src="../assets/images/portrait.png" alt="Portrait of Magdalena Fuentes">
-        <div class="reveal">
-          <h2 class="profile-name">Magdalena Fuentes</h2>
-          <p class="research-lead">I am Assistant Professor of Music Technology and Integrated Design &amp; Media at New York University. My students and I are part of the Music and Audio Research Laboratory (MARL) and the Integrated Design &amp; Media (IDM) program.</p>
-          <p>I grew up in Uruguay, studied electrical engineering at Universidad de la República, and did my Ph.D. at Université Paris-Saclay. I also spend time teaching and building research communities, especially around Latin American music and audio.</p>
-          <h3>Assistant Professor of Interactive Design, Music and Sound</h3>
-          <p>New York University<br>
-            <a href="https://steinhardt.nyu.edu/music/technology/">Music Technology</a> at Steinhardt School of Culture, Education, and Human Development.<br>
-            <a href="https://idm.engineering.nyu.edu/">Integrated Design &amp; Media (IDM)</a> at Tandon School of Engineering.
-          </p>
-          <h3>Core Faculty</h3>
-          <p><a href="https://steinhardt.nyu.edu/marl">Music and Audio Research Laboratory (MARL)</a></p>
-          <h3>Affiliated Faculty</h3>
-          <p><a href="https://engineering.nyu.edu/academics/departments/computer-science-engineering">Department of Computer Science and Engineering</a><br>Tandon School of Engineering, New York University</p>
+      <article class="person person-self reveal">
+        <img src="../assets/images/portrait.png" alt="Portrait of Magdalena Fuentes">
+        <div>
+          <h3>Magdalena Fuentes</h3>
+          <p>Assistant Professor<br>Music Technology and Integrated Design &amp; Media<br>New York University</p>
+          <div class="btn-row">
+            <button class="btn btn-sm bib-toggle" type="button" aria-expanded="false" aria-controls="magda-bio">Bio</button>
+          </div>
         </div>
-      </div>
+        <div class="bibtex" id="magda-bio">
+            <button class="btn btn-xs copy-bio" type="button" aria-label="Copy"><svg class="copy-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><svg class="copy-check" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg></button>
+            <div class="bio-text">
+              <p>Magdalena Fuentes is Assistant Professor of Interactive Design, Music and Sound at New York University. She is appointed in Music Technology at the Steinhardt School of Culture, Education, and Human Development and in Integrated Design &amp; Media at the Tandon School of Engineering. She is core faculty in the Music and Audio Research Laboratory (MARL) and affiliated faculty in the Department of Computer Science and Engineering at Tandon.</p>
+              <p>Her research develops signal processing and machine learning methods for machine listening: how computers interpret music and environmental sound, how sound connects with vision and language, and how those models can be made more robust, interpretable, and reliable. Her work spans music information retrieval, environmental sound understanding, multimodal analysis and synthesis, and applications in accessibility and health.</p>
+              <p>She received her Ph.D. from Université Paris-Saclay, France, in 2019. She studied electrical engineering at Universidad de la República, Uruguay, and completed her B.Eng. thesis, “Procesamiento multimodal de señales en la interpretación de música” in 2015. That thesis received the best undergraduate thesis award from the National Academy of Engineering of Uruguay. She received the NYU Provost’s Postdoctoral Fellowship (2019), the Google Award for Inclusion Research (2024), and the NYU Steinhardt Gabriel Carras Research Award for Promising Young Scholars (2025).</p>
+              <p>She co-organizes the Latin American Music Information Retrieval Workshop (LAMIR) and, since 2021, has helped organizing the Latin American BISH Bash. She has served as Scientific Program Chair of ISMIR 2025, Grants Chair of ISMIR 2026, Technical Program Chair of the DCASE Workshop (2021, 2023, 2025), and member of the IEEE Audio and Acoustic Signal Processing Technical Committee (2021–2023 and 2023–2026). She has been Area Chair at ICASSP (2022–2026), Diversity Chair at WASPAA 2023, Awards Chair of the DCASE Workshop (2021, 2023, 2025), meta-reviewer at ISMIR (2022, 2026), Special Session Chair at ISMIR 2020, and a member of the local committee at ISMIR 2018. She coordinated the DCASE 2020 Urban Sound Tagging task, co-organized the 2019 workshop on Computational Models for Rhythm and Expressiveness, and is guest editor of the TISMIR special collection on open music data (2026) and co-organizer of Dagstuhl Seminar 26272, Open Music Data for Music Processing Research (2026). She mentors through IEEE SigMA, IEEE ME-UYR (2022, 2024), WiMIR, LXAI NeurIPS (2023), and NYU’s ARISE and REU programs, and reviews for ISMIR, ICASSP, DCASE, TASLP, PLOS ONE, JOSS, TISMIR, and AAAI.</p>
+            </div>
+          </div>
+      </article>
       <h2 class="reveal">Students and collaborators</h2>
       <p class="section-intro reveal">Current students, collaborators, and alumni.</p>
       <div class="people-grid">
@@ -176,6 +176,6 @@
   </main>
 
 
-  <script src="../assets/js/main.js?v=4"></script>
+  <script src="../assets/js/main.js?v=10"></script>
 </body>
 </html>
