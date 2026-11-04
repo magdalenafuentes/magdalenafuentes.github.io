@@ -376,7 +376,15 @@ body:not(.page-home) .menu-toggle {
 }
 
 .hero-intro {
-  max-width: 52rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(220px, 0.75fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.hero-intro .hero-kicker {
+  width: 100%;
+  margin: 0;
 }
 
 .hero-intro .hero-name {
@@ -908,6 +916,8 @@ body:not(.page-home) .menu-toggle {
   max-width: 280px;
   width: auto;
   object-fit: contain;
+  background: #ffffff;
+  border-radius: 8px;
 }
 
 .software-card .btn-row {
@@ -937,7 +947,8 @@ body:not(.page-home) .menu-toggle {
   height: 110px;
   object-fit: cover;
   object-position: center;
-  background: var(--white);
+  background: #ffffff;
+  border-radius: 8px;
   margin-bottom: 12px;
 }
 
@@ -1503,6 +1514,58 @@ body:not(.page-home) .menu-toggle {
   margin-bottom: 48px;
 }
 
+.page-join .join-jumps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 4px 0 28px;
+}
+
+.page-join .join-lead {
+  max-width: 46rem;
+  margin: 0 0 56px;
+}
+
+.page-join .join-lead p {
+  margin: 0 0 1em;
+}
+
+.page-join .join-lead p:last-child {
+  margin-bottom: 0;
+}
+
+.page-join .join-section {
+  max-width: 46rem;
+  margin-bottom: 64px;
+  scroll-margin-top: calc(var(--header-h) + 16px);
+}
+
+.page-join .join-section h2 {
+  margin-bottom: 12px;
+}
+
+.join-programs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 22px 0;
+}
+
+.join-program {
+  background: var(--mint);
+  border-radius: 8px;
+  padding: 18px 18px 16px;
+}
+
+.join-program h3 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+}
+
+.join-program p {
+  margin: 0 0 14px;
+}
+
 .page-join main a:not(.btn),
 .page-activities main a:not(.btn) {
   text-decoration: underline;
@@ -1558,6 +1621,7 @@ body:not(.page-home) .menu-toggle {
   .news-grid,
   .news-grid-4,
   .join-points,
+  .join-programs,
   .theme-grid-3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1590,8 +1654,13 @@ body:not(.page-home) .menu-toggle {
     padding: 110px 0 50px;
   }
 
-  .hero-grid {
+  .hero-grid,
+  .hero-intro {
     grid-template-columns: 1fr;
+  }
+
+  .hero-intro .hero-kicker {
+    width: min(420px, 100%);
   }
 
   .hero-desktop {
@@ -1646,7 +1715,8 @@ body:not(.page-home) .menu-toggle {
   .news-grid,
   .news-grid-4,
   .funder-grid,
-  .join-points {
+  .join-points,
+  .join-programs {
     grid-template-columns: 1fr;
   }
 
@@ -1656,8 +1726,15 @@ body:not(.page-home) .menu-toggle {
   }
 
   .people-grid {
-    grid-template-columns: max-content;
-    justify-content: center;
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+
+  .people-grid .person {
+    grid-template-columns: 1fr;
+    justify-items: start;
+    width: 100%;
+    gap: 16px;
   }
 
   .bio-grid {
@@ -1777,34 +1854,37 @@ html[data-theme="dark"] :where(
 
 html[data-theme="dark"] body:not(.page-home) .site-header,
 html[data-theme="dark"] body:not(.page-home) .site-header.is-sticky {
-  background: #ffffff;
-  border-bottom-color: var(--teal);
+  background: rgba(12, 28, 25, 0.96);
+  border-bottom-color: transparent;
 }
 
-html[data-theme="dark"] :where(.affiliations, .section-mint, .site-footer, .pub .bibtex, .person .bibtex) {
+html[data-theme="dark"] :where(.affiliations, .section-mint, .site-footer, .pub .bibtex, .person .bibtex, .join-program) {
   background: #17302c;
 }
 
 html[data-theme="dark"] body:not(.page-home) .logo-light {
-  display: none;
-}
-
-html[data-theme="dark"] body:not(.page-home) .logo-dark {
   display: block;
 }
 
-html[data-theme="dark"] body:not(.page-home) .site-header .nav-list a,
+html[data-theme="dark"] body:not(.page-home) .logo-dark {
+  display: none;
+}
+
+html[data-theme="dark"] body:not(.page-home) .site-header .nav-list a {
+  color: #d7ebe6;
+}
+
 html[data-theme="dark"] body:not(.page-home) .site-header .header-socials a,
 html[data-theme="dark"] body:not(.page-home) .site-header .theme-toggle,
 html[data-theme="dark"] body:not(.page-home) .site-header .menu-toggle {
-  color: var(--teal);
+  color: var(--white);
 }
 
 html[data-theme="dark"] body:not(.page-home) .site-header .nav-list a:hover,
 html[data-theme="dark"] body:not(.page-home) .site-header .nav-list a[aria-current="page"],
 html[data-theme="dark"] body:not(.page-home) .site-header .header-socials a:hover,
 html[data-theme="dark"] body:not(.page-home) .site-header .theme-toggle:hover {
-  color: var(--teal-mid);
+  color: var(--mint);
 }
 
 html[data-theme="dark"] :where(
