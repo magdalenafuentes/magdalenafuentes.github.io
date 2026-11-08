@@ -620,11 +620,30 @@ body:not(.page-home) .menu-toggle {
 }
 
 .person h3 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
   font-size: 1.05rem;
   font-weight: 700;
   margin: 0 0 6px;
   color: var(--teal);
   line-height: 1.3;
+}
+
+.role-flag {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--teal-soft);
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+  white-space: nowrap;
 }
 
 .person p {
@@ -715,6 +734,10 @@ body:not(.page-home) .menu-toggle {
 }
 
 .alumni h3 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
   font-size: 1.05rem;
   margin: 0 0 8px;
   color: var(--teal);
@@ -861,6 +884,10 @@ body:not(.page-home) .menu-toggle {
 /* Resources lists */
 .page-resources .page-title {
   margin-bottom: 0;
+}
+
+.page-resources section[id] {
+  scroll-margin-top: calc(var(--header-h) + 16px);
 }
 
 .page-resources h2 {
@@ -1514,11 +1541,20 @@ body:not(.page-home) .menu-toggle {
   margin-bottom: 48px;
 }
 
-.page-join .join-jumps {
+.page-join .join-jumps,
+.page-resources .join-jumps {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   margin: 4px 0 28px;
+}
+
+.page-resources .join-jumps {
+  margin: 36px 0 0;
+}
+
+.page-resources #tutorials {
+  padding-top: 28px;
 }
 
 .page-join .join-lead {
@@ -1803,8 +1839,29 @@ html[data-theme="dark"] .hero {
   background: #0c1c19;
 }
 
+html[data-theme="dark"] main > section + section,
+html[data-theme="dark"] .join-section,
+html[data-theme="dark"] .pub + .pub,
+html[data-theme="dark"] .alumni,
+html[data-theme="dark"] .page-people .person-self + h2,
+html[data-theme="dark"] .course h2 {
+  border-top: 1px solid var(--teal);
+}
+
+html[data-theme="dark"] .join-section,
+html[data-theme="dark"] .pub + .pub,
+html[data-theme="dark"] .course h2 {
+  padding-top: 28px;
+}
+
+html[data-theme="dark"] .page-people .person-self + h2 {
+  margin-top: 8px;
+  padding-top: 32px;
+}
+
 html[data-theme="dark"] .site-header.is-sticky {
-  background: rgba(12, 28, 25, 0.96);
+  background: #0c1c19;
+  border-bottom-color: var(--teal);
 }
 
 html[data-theme="dark"] body {
@@ -1854,8 +1911,8 @@ html[data-theme="dark"] :where(
 
 html[data-theme="dark"] body:not(.page-home) .site-header,
 html[data-theme="dark"] body:not(.page-home) .site-header.is-sticky {
-  background: rgba(12, 28, 25, 0.96);
-  border-bottom-color: transparent;
+  background: #10211e;
+  border-bottom-color: var(--teal);
 }
 
 html[data-theme="dark"] :where(.affiliations, .section-mint, .site-footer, .pub .bibtex, .person .bibtex, .join-program) {
@@ -1956,8 +2013,10 @@ html[data-theme="dark"] .pub-thumb img {
   background: #ffffff;
 }
 
-html[data-theme="dark"] .schedule > li {
-  border-color: #3d6a63;
+html[data-theme="dark"] .schedule > li,
+html[data-theme="dark"] .join-path,
+html[data-theme="dark"] .join-path:last-child {
+  border-color: var(--teal);
 }
 
 html[data-theme="dark"] .mobile-nav a,
