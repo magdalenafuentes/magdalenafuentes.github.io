@@ -881,6 +881,41 @@ body:not(.page-home) .menu-toggle {
   display: block;
 }
 
+.page-resources .bibtex {
+  display: none;
+  margin: 12px 0 0;
+  padding: 12px 14px;
+  max-width: 100%;
+  overflow-x: auto;
+  background: var(--mint);
+  color: var(--teal);
+  border: 1px solid var(--teal);
+  border-radius: 8px;
+  font-size: 12px;
+  line-height: 1.45;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.page-resources .bibtex pre {
+  margin: 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12px;
+  line-height: 1.45;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  background: transparent;
+  color: inherit;
+}
+
+.page-resources .copy-bib {
+  margin: 0 0 10px;
+}
+
+.page-resources .bibtex.is-open {
+  display: block;
+}
+
 /* Resources lists */
 .page-resources .page-title {
   margin-bottom: 0;
@@ -1915,7 +1950,7 @@ html[data-theme="dark"] body:not(.page-home) .site-header.is-sticky {
   border-bottom-color: var(--teal);
 }
 
-html[data-theme="dark"] :where(.affiliations, .section-mint, .site-footer, .pub .bibtex, .person .bibtex, .join-program) {
+html[data-theme="dark"] :where(.affiliations, .section-mint, .site-footer, .pub .bibtex, .page-resources .bibtex, .person .bibtex, .join-program) {
   background: #17302c;
 }
 
