@@ -1,0 +1,21 @@
+{
+  "name": "Magdalena Fuentes",
+  "short_name": "Magdalena Fuentes",
+  "icons": [
+    {
+      "src": "/assets/images/favicon.png?v=2",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/images/icon-512.png?v=2",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#13403a"
+}
